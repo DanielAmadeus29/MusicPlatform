@@ -1,0 +1,44 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/loginstyle.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Register</h2>
+
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <p style="color: red;">@ViewData["ErrorMessage"]</p>
+        }
+
+        @if (ViewData["SuccessMessage"] != null)
+        {
+            <p style="color: green;">@ViewData["SuccessMessage"]</p>
+        }
+
+        <form method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+            <p>Back to <a href="/Login">Log in</a> Page</p>
+
+        </form>
+    </div>
+
+</body>
+</html>
